@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> <!-- Force UTF-8 encoding -->
+    <style>
+        body {
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            /* Emoji-friendly fonts */
+            font-family: 'Courier New', monospace, "Apple Color Emoji", "Segoe UI Emoji";
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 3em;
+            text-shadow: 0 0 10px #ff69b4;
+            animation: pulse 1s infinite;
+        }
+
+        .heart {
+            color: #ff1493;
+            font-size: 4em;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .code-love {
+            color: #00ff00;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+        /* Binary rain effect */
+        .binary {
+            position: fixed;
+            color: #00ff00;
+            opacity: 0.3;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Binary background effect -->
+    <div class="binary"></div>
+
+    <div class="container">
+        <h1>Happy Birthday Babe! 🎉</h1>
+        <div class="heart">❤️</div>
+        <div class="code-love">
+            <p>while (alive) {</p>
+            <p style="margin-left: 20px;">loveYou++; 💻</p>
+            <p>}</p>
+        </div>
+        <button onclick="showSurprise()" style="margin-top: 20px; padding: 10px; cursor: pointer;">
+            Click for Special Message 💌
+        </button>
+    </div>
+
+    <script>
+        function createBinary() {
+            const element = document.querySelector('.binary');
+            setInterval(() => {
+                element.innerText = Math.random().toString(2).substr(2, 50);
+            }, 100);
+        }
+        
+        function showSurprise() {
+            alert("ERROR 404: My Heart\nReason: Stolen by Ashish!\nSolution: Keep it forever ❤️");
+        }
+
+        createBinary();
+    </script>
+</body>
+</html>
